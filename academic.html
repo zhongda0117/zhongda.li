@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>你的姓名 · 学术</title>
+  <title>Zhongda Li · EN</title>
   <style>
     * { box-sizing: border-box; }
-    body {
-      margin: 0; background: #faf8f5; color: #292724;
-      font-family: system-ui, sans-serif; line-height: 1.8;
-    }
+   body {
+  margin: 0;
+  background: #fdf6e6;
+  color: #292724;
+  font-family: system-ui, sans-serif;
+  line-height: 1.8;
+}
     header, main, footer {
       max-width: 880px; margin: auto; padding: 24px;
     }
@@ -23,7 +26,39 @@
     nav a[aria-current] { border-bottom: 2px solid; }
     h1 { font-size: 40px; line-height: 1.3; }
     section { margin-bottom: 48px; }
-    .intro { padding: 32px 0; }
+    /* 阿 狸 */
+     /* 个人介绍区域的背景 */
+.intro {
+  padding: 40px 24px;
+  padding-right: 44%;
+  min-height: 310px;
+  border-radius: 16px;
+
+  background-color: #fdf6e6;
+  background-image:
+    linear-gradient(
+      to right,
+      #fdf6e6 0%,
+      #fdf6e6 42%,
+      transparent 68%
+    ),
+    url("fox.jpeg");
+  background-position: center, right center;
+  background-size: cover, auto 100%;
+  background-repeat: no-repeat;
+}
+
+/* 手机屏幕：文字在上，图片在下 */
+@media (max-width: 600px) {
+  .intro {
+    padding: 24px;
+    padding-bottom: 220px;
+
+    background-image: url("fox.jpeg");
+    background-position: center bottom;
+    background-size: auto 220px;
+  }
+}
     .item {
       border-top: 1px solid #ded9d2;
       padding: 20px 0;
@@ -33,72 +68,208 @@
     @media (max-width: 600px) {
       h1 { font-size: 32px; }
     }
+    
+   /* 雪花 */
+   /* 隐藏圆点 */
+.snow-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* 为雪花预留位置 */
+.snow-list li {
+  position: relative;
+  padding-left: 26px;
+}
+
+/* 添加雪花 */
+.snow-list li::before {
+  content: "❄";
+  position: absolute;
+  left: 0;
+  color: #729bb5;
+}
+
+/* 左侧研究栏目，右侧引言 */
+.research-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.research-layout > div > section:last-child {
+  margin-bottom: 0;
+}
+
+/* 法语引言 */
+.science-quote {
+  position: relative;
+  margin: 0;
+  padding: 28px 12px;
+  transform: rotate(-5deg);
+
+  font-family: "Baskerville", "Palatino", "Times New Roman", serif;
+  font-style: italic;
+  font-weight: normal;
+  font-size: clamp(22px, 2.5vw, 28px);
+  line-height: 1.7;
+  text-align: center;
+  color: #88654e;
+}
+
+.science-quote p {
+  position: relative;
+  margin: 0;
+}
+
+/* 左上角引号 */
+.science-quote::before {
+  content: "“";
+  position: absolute;
+  top: -18px;
+  left: -10px;
+  font-size: 80px;
+  font-style: normal;
+  line-height: 1;
+  color: rgba(136, 101, 78, 0.3);
+  pointer-events: none;
+}
+
+/* 右下角引号 */
+.science-quote::after {
+  content: "”";
+  position: absolute;
+  bottom: -18px;
+  right: -10px;
+  font-size: 80px;
+  font-style: normal;
+  line-height: 1;
+  color: rgba(136, 101, 78, 0.3);
+  pointer-events: none;
+}
+
+/* 最后一行稍微强调 */
+.science-quote span {
+  color: #684735;
+}
+
+/* 引言下方的装饰线 */
+.science-quote .quote-line {
+  width: 64px;
+  height: 1px;
+  margin: 24px auto 0;
+  background: #cbb59a;
+}
+
+/* 手机改为上下排列 */
+@media (max-width: 600px) {
+  .research-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .science-quote {
+    font-size: 24px;
+    transform: none;
+    padding: 24px 12px;
+  }
+}
   </style>
 </head>
 <body>
   <header>
-    <strong>你的姓名</strong>
+    <strong>Zhongda Li</strong>
     <nav aria-label="主导航">
-      <a href="index.html">生活</a>
-      <a href="academic.html" aria-current="page">学术</a>
+      <a href="index.html">中文</a>
+      <a href="academic.html" aria-current="page">EN</a>
     </nav>
   </header>
 
   <main>
     <section class="intro">
-      <h1>你的姓名</h1>
-      <p class="muted">你的身份 · 你的学校或研究机构</p>
-      <p>这里用两三句话介绍你的研究背景、主要关注的问题，
-      以及目前正在开展的工作。</p>
+      <h1>Zhongda Li</h1>
+      <p class="muted">PhD · Courant Institute School of Mathematics Science</p>
+      <p>Algebraic number theory, arithmetic geometry</p>
       <p>
-        <a href="cv.pdf">下载简历（PDF）</a>
+        <a href="zhongda.li.cv.pdf">My CV</a>
         ·
-        <a href="mailto:yourname@example.com">联系我</a>
+        <a href="mailto:zhongda.li@nyu.edu">Contact Me</a>
       </p>
     </section>
 
+<div class="research-layout">
+  <div>
     <section>
-      <h2>研究方向</h2>
-      <ul>
-        <li><strong>方向一：</strong>说明你研究什么问题。</li>
-        <li><strong>方向二：</strong>说明你使用什么方法。</li>
-        <li><strong>方向三：</strong>说明研究的应用领域。</li>
+      <h2>Research Interest</h2>
+      <ul class="snow-list">
+        <li>Elliptic Curves</li>
+        <li>Arakelov Geometry</li>
+        <li>L-function</li>
       </ul>
     </section>
 
     <section>
-      <h2>论文与成果</h2>
+      <h2>Math in AI age</h2>
+      <ul class="snow-list">
+        <li>The Mathematics I love</li>
+      </ul>
+    </section>
+  </div>
+
+<blockquote class="science-quote" lang="fr">
+  <p>
+    Le but unique de la science,<br>
+    c’est l’honneur<br>
+    <span>de l’esprit humain.</span>
+  </p>
+  <div class="quote-line" aria-hidden="true"></div>
+</blockquote>
+</div>
+
+
+  
+    <section>
+      <h2>Publications</h2>
       <article class="item">
-        <h3>在这里填写论文标题</h3>
-        <p><strong>你的姓名</strong>，其他作者</p>
-        <p class="muted">期刊或会议名称 · 年份 · 发表状态</p>
-        <p>用一两句话说明这项工作的主要贡献。</p>
+        <h3>Title.TBA</h3>
+        <p><strong>Z.Li</strong>，other Author.TBA</p>
+        <p class="muted">Journal.TBA · Year · Status</p>
+        <p>Description.TBA</p>
+      </article>
+    </section>
+  
+
+    <section>
+      <h2>Research Program</h2>
+      <article class="item">
+        <h3>Name.TBA</h3>
+        <p class="muted">2026—2031 · TBA</p>
+        <p>TBA</p>
       </article>
     </section>
 
     <section>
-      <h2>研究项目</h2>
-      <article class="item">
-        <h3>项目名称</h3>
-        <p class="muted">开始时间—结束时间 · 你的角色</p>
-        <p>介绍项目目标、你承担的工作，以及主要成果。</p>
-      </article>
-    </section>
-
-    <section>
-      <h2>教育经历</h2>
+      <h2>Education</h2>
       <div class="item">
-        <strong>学校名称 · 学位 · 专业</strong>
-        <p class="muted">入学年份—毕业年份</p>
+        <strong>Peking University · Bachelor · Mathematics and Applied Mathematics</strong>
+        <p class="muted">2022—2026</p>
+      </div>
+      
+       <div class="item">
+        <strong>New York University · PhD · Math</strong>
+        <p class="muted">2026—Present</p>
       </div>
     </section>
 
     <section>
-      <h2>联系方式</h2>
-      <p>邮箱：
-        <a href="mailto:yourname@example.com">yourname@example.com</a>
+      <h2>Contact</h2>
+      <p>E - mail：
+        <a href="mailto:zhongda.li@nyu.edu">zhondga.li@nyu.edu</a>
       </p>
-      <p>机构：你的学校、院系或实验室</p>
+      <p>Courant Institute School of Mathematics Science</p>
+      <p>Office: 627 WWH 
     </section>
   </main>
 
