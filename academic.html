@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>你的姓名 · 学术</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: #faf8f5; color: #292724;
+      font-family: system-ui, sans-serif; line-height: 1.8;
+    }
+    header, main, footer {
+      max-width: 880px; margin: auto; padding: 24px;
+    }
+    header {
+      display: flex; justify-content: space-between;
+      align-items: center; gap: 20px; flex-wrap: wrap;
+    }
+    nav { display: flex; gap: 24px; }
+    a { color: #77523c; text-underline-offset: 5px; }
+    nav a { text-decoration: none; }
+    nav a[aria-current] { border-bottom: 2px solid; }
+    h1 { font-size: 40px; line-height: 1.3; }
+    section { margin-bottom: 48px; }
+    .intro { padding: 32px 0; }
+    .item {
+      border-top: 1px solid #ded9d2;
+      padding: 20px 0;
+    }
+    .muted, footer { color: #69645f; }
+    footer { font-size: 14px; }
+    @media (max-width: 600px) {
+      h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>你的姓名</strong>
+    <nav aria-label="主导航">
+      <a href="index.html">生活</a>
+      <a href="academic.html" aria-current="page">学术</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>你的姓名</h1>
+      <p class="muted">你的身份 · 你的学校或研究机构</p>
+      <p>这里用两三句话介绍你的研究背景、主要关注的问题，
+      以及目前正在开展的工作。</p>
+      <p>
+        <a href="cv.pdf">下载简历（PDF）</a>
+        ·
+        <a href="mailto:yourname@example.com">联系我</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>研究方向</h2>
+      <ul>
+        <li><strong>方向一：</strong>说明你研究什么问题。</li>
+        <li><strong>方向二：</strong>说明你使用什么方法。</li>
+        <li><strong>方向三：</strong>说明研究的应用领域。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>论文与成果</h2>
+      <article class="item">
+        <h3>在这里填写论文标题</h3>
+        <p><strong>你的姓名</strong>，其他作者</p>
+        <p class="muted">期刊或会议名称 · 年份 · 发表状态</p>
+        <p>用一两句话说明这项工作的主要贡献。</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>研究项目</h2>
+      <article class="item">
+        <h3>项目名称</h3>
+        <p class="muted">开始时间—结束时间 · 你的角色</p>
+        <p>介绍项目目标、你承担的工作，以及主要成果。</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>教育经历</h2>
+      <div class="item">
+        <strong>学校名称 · 学位 · 专业</strong>
+        <p class="muted">入学年份—毕业年份</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>联系方式</h2>
+      <p>邮箱：
+        <a href="mailto:yourname@example.com">yourname@example.com</a>
+      </p>
+      <p>机构：你的学校、院系或实验室</p>
+    </section>
+  </main>
+
+  <footer>© 你的姓名</footer>
+</body>
+</html>
