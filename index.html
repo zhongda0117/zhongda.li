@@ -78,15 +78,69 @@
 }
     h1 { font-size: 40px; line-height: 1.3; }
     section { margin-bottom: 48px; }
-    .card {
-      padding: 24px; margin: 16px 0;
-      background: white; border-radius: 12px;
-    }
-    footer { font-size: 14px; color: #69645f; }
-    @media (max-width: 600px) {
-      .intro { flex-direction: column-reverse; align-items: flex-start; }
-      h1 { font-size: 32px; }
-    }
+/* 抹茶色纸质卡片 */
+.card {
+  position: relative;
+  padding: 28px;
+  margin: 28px 0;
+  border-radius: 8px;
+
+  /* 浅抹茶底色与纸面纹理 */
+  background-color: #e5ead8;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(83, 99, 68, 0.025) 0px,
+      rgba(83, 99, 68, 0.025) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.4),
+      transparent 65%
+    );
+
+  border: 1px solid rgba(110, 128, 78, 0.22);
+
+  /* 柔和投影与纸张边缘高光 */
+  box-shadow:
+    0 3px 6px rgba(65, 78, 47, 0.06),
+    0 10px 24px rgba(65, 78, 47, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+/* 顶部半透明绿色胶带 */
+.card::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 88px;
+  height: 25px;
+
+  background: rgba(174, 190, 143, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 1px 3px rgba(65, 78, 47, 0.08);
+
+  transform: translateX(-50%) rotate(-4deg);
+  pointer-events: none;
+}
+
+/* 深抹茶色标题 */
+.card h3 {
+  margin-top: 8px;
+  color: #536344;
+}
+
+.card p {
+  margin-bottom: 0;
+}
+
+/* 卡片内的链接 */
+.card a {
+  color: #536344;
+}
 
 /* 飘雪层 */
 #snowfall {
